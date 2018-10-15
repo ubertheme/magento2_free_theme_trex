@@ -5,7 +5,7 @@
 
 > New to Magento 2? Perfect, UB Trex can probably be your practical first step and just what you would need to start with for your first online store. UB Trex is clean and simple, highlights the flat and minimalistic design.
 
-<a href="http://bit.ly/ub_trex" target="_blank"><img src="https://static.ubertheme.com/blog/2018/9/free_magento_2_theme/ub_trex_home.png" 
+<a href="http://bit.ly/ub_trex" target="_blank"><img src="https://static.ubertheme.com/Products/ub_trex/trex-feature-1.png" 
 alt="Free Magento 2 Theme - UB Trex" width="560" height="315" border="10" /></a>
 
 UB Trex has been carefully tested with our premium Magento 2 extensions -- <a href="http://bit.ly/ub-megamenu" target="_blank">UB Mega Menu</a>, <a href="http://bit.ly/magento-2-Content-Slider" target="_blank">UB Content Slider</a>, <a href="http://bit.ly/ub-quickview" target="_blank">UB Quick View</a> (need separate purchase) -- most of the work is finished and ready for you to take advantage of. 
