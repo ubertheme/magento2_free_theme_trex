@@ -1,0 +1,72 @@
+
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @var $block \Magento\LayeredNavigation\Block\Navigation
+ */
+?>
+<?php if ($block->canShowBlock()): ?>
+    <div class="block filter current">
+        <?php echo $block->getChildHtml('state') ?>
+
+        <?php if ($block->getLayer()->getState()->getFilters()): ?>
+            <div class="block-actions filter-actions">
+                <a href="<?php /* @escapeNotVerified */ echo $block->getClearUrl() ?>" class="action clear filter-clear"><span><?php /* @escapeNotVerified */ echo __('Clear All') ?></span></a>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="block filter">
+        <h3 class="block-title filter-title">
+            <strong><?php /* @escapeNotVerified */ echo __('Shop By') ?></strong>
+        </h3>
+
+        <div class="block-content filter-content">
+            <?php $wrapOptions = false; ?>
+            <?php foreach ($block->getFilters() as $filter): ?>
+                <?php if (!$wrapOptions): ?>
+                    <div class="filter-options" id="narrow-by-list">
+                <?php $wrapOptions = true; endif; ?>
+                    <?php if ($filter->getItemsCount()): ?>
+                        <div class="filter-item">
+                            <h4 role="heading" aria-level="3" class="filter-options-title toggle-avaiable"><?php echo $block->escapeHtml(__($filter->getName())) ?></h4>
+                            <div class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></div>
+                        </div>
+                    <?php endif; ?>
+            <?php endforeach; ?>
+            <?php if ($wrapOptions): ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    <script type="text/javascript">    
+    require([
+        'jquery',
+        'domReady!'        
+        ],function($){
+            $('.filter').addClass('tab-toggle');
+            $('.filter-options .filter-options-title').click(function(){
+                $(this).toggleClass('close');
+                $(this).next().slideToggle();
+            });
+            $('.filter-options .filter-options-content').each(function(i){
+                if(i==0) {            
+                    $(this).prev().addClass('close');
+                    $(this).css({'display':'block'});
+                }else {
+                    $(this).css({'display':'none'});
+                }
+            })
+        });
+    </script>
+<?php endif; ?>

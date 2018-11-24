@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceBlock name="header" remove="true" />
+    <referenceContainer name="header.panel" remove="true" /> 
+    
+    <move element="top.search" destination="ub.header" before="-"/>
+    <move element="minicart" destination="ub.header" before="-"/>
+    <move element="top.links" destination="ub.header" before="-"/>
+
+    <move element="ub.header" destination="header.container" before="-"/>
+    <block class="Magento\Framework\View\Element\Template" name="ub.header" template="Magento_Theme::html/header.phtml">
+      <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
+      <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+      <block class="Magento\Directory\Block\Currency" name="store.settings.currency" template="currency.phtml" />
+      <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
+          <arguments>
+              <argument name="logo_img_width" xsi:type="number">189</argument>
+              <argument name="logo_img_height" xsi:type="number">64</argument>
+          </arguments>
+      </block>
+    </block>
+    <block class="Magento\Framework\View\Element\Template" name="top.search.sticky" as="topSearchSticky" template="Magento_Search::form.mini.phtml" />
+    <move element="top.search.sticky" destination="store.menu" after="-"/>
+
+    
+
+    <block class="Magento\Framework\View\Element\Template" name="button.sidebar" as="button-sidebar" before="-" template="Magento_Theme::html/btn-sidebar.phtml" />
+    <move element="button.sidebar" destination="div.sidebar" before="-"/>
+
+    <move element="page.messages" destination="page.wrapper" after="page.top" />
+    
+    <referenceContainer name="bots4.container">
+        <container name="sections.panel.bots4" label="" htmlTag="div" htmlClass="container">
+            <container name="sections.panel.bots4.content" label="UberTheme - Bots4 Content" as="sections.panel.bots4.content" htmlTag="div" htmlClass="inner">
+                <block class="Magento\Cms\Block\Block" name="footer-links" before="-">
+                  <arguments>
+                    <argument name="block_id" xsi:type="string">footer-links</argument>
+                  </arguments>
+                </block>
+            </container>
+        </container>
+    </referenceContainer>
+    <referenceContainer name="footer">
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="store_switcher" remove="true"/>
+    </referenceContainer>
+  </body>
+</page>

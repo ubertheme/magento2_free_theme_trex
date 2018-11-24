@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+  <update handle="empty"/>
+  <referenceContainer name="page.wrapper">
+    <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="sections header" before="main.content"/>
+    <container name="page.top" as="page_top" label="After Container Tops2" after="header.container"/>
+    <container name="topsl1.container" as="topsl1_container" label="Page Section Container"  htmlTag="div" htmlClass="sections topsl1" after="page.top" />
+    <container name="topsl2.container" as="topsl2_container" label="Page Section Container"  htmlTag="div" htmlClass="sections our-policy" after="topsl1.container" />
+    <container name="topsl3.container" as="topsl3_container" label="Page Section Container"  htmlTag="div" htmlClass="sections topsl3" before="main.content" />
+    
+    <container name="bots1.container" as="bots1_container" label="Page Section Container"  htmlTag="div" htmlClass="sections bots1" after="main.content" />
+    <container name="bots2.container" as="bots2_container" label="Page Section Container"  htmlTag="div" htmlClass="sections bots2" after="bots1.container" />
+    <container name="bots3.container" as="bots3_container" label="Page Section Container"  htmlTag="div" htmlClass="sections bots3" after="bots2.container" />
+    <container name="bots4.container" as="bots4_container" label="Page Section Container"  htmlTag="div" htmlClass="sections bots4" after="bots3.container" />
+    <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="sections footer"  after="-" />
+  </referenceContainer>
+</layout>

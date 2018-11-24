@@ -1,0 +1,110 @@
+
+/*============================================================================
+
+  Table of Contents
+
+  #Magento variables
+    - Messages
+    - Header
+  #Theme variables
+  #Reset
+  #Global notice
+    - Skip Content
+    - Message
+  #Header
+    - Logo
+    - Toggle
+    - Search
+    - Minicart
+    - My Account
+    - Store Settings
+  #Our Policy
+    - Block Policy
+    - Sales Banners
+    - Collections
+  #Footer
+  #Sidebar
+  #Widgets
+  #Calendar
+
+==============================================================================*/
+
+/*============================================================================
+
+    Responsive Variable
+
+    // Mobile Portrait 
+    @media (max-width: @screen__xs) {
+      
+    }
+
+    // Mobile Landscape 
+    @media (max-width: @screen__s) {
+      
+    }
+
+    // Tablet Portrait 
+    @media (min-width: @screen__m) {
+      
+    }
+
+    // Tablet Landscape 
+    @media (min-width: @screen__l) {
+      
+    }
+
+    // Desktop 
+    @media (min-width: @screen__xl) {
+      
+    }
+
+    // Desktop Extra
+    @media (min-width: @screen__xxl) {
+      
+    }
+
+==============================================================================*/
+
+//
+//  #Magento variables
+//  ---------------------------------------------
+
+
+//
+//  #Theme variables
+//  ---------------------------------------------
+
+//
+//  Common
+//  ---------------------------------------------
+
+& when (@media-common = true) {
+    .breadcrumbs {
+        .lib-breadcrumbs();
+        padding: 20px 0;
+        margin: auto;
+        // Mobile Landscape 
+        @media (max-width: @screen__s) {
+            padding: 20px 10px;
+        }
+	      // Tablet Portrait 
+        @media (min-width: @screen__m) {
+            max-width: 740px;
+        }
+
+        // Tablet Landscape 
+        @media (min-width: @screen__l) {
+            max-width: 980px;
+        }
+
+        // Desktop 
+        @media (min-width: @screen__xl) {
+            max-width: 1170px;
+        }
+
+        // Desktop Extra
+        @media (min-width: @screen__xxl) {
+            max-width: 1400px;  
+        }
+    }
+}

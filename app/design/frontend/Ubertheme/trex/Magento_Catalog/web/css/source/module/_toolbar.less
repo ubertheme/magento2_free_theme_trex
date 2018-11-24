@@ -1,0 +1,273 @@
+
+/*============================================================================
+
+  Table of Contents
+
+  #Magento variables
+
+
+==============================================================================*/
+
+/*============================================================================
+
+    Responsive Variable
+
+    // Mobile Portrait 
+    @media (max-width: @screen__xs) {
+      
+    }
+
+    // Mobile Landscape 
+    @media (max-width: @screen__s) {
+      
+    }
+
+    // Tablet Portrait 
+    @media (min-width: @screen__m) {
+      
+    }
+
+    // Tablet Landscape 
+    @media (min-width: @screen__l) {
+      
+    }
+
+    // Desktop 
+    @media (min-width: @screen__xl) {
+      
+    }
+
+    // Desktop Extra
+    @media (min-width: @screen__xxl) {
+      
+    }
+
+==============================================================================*/
+
+@toolbar-mode-icon-font-size: 24px;
+@toolbar-element-background: @panel__background-color;
+
+& when (@media-common = true) {
+
+    .page-products {
+        .columns {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .toolbar {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        display: inline-block;
+        width: 100%;
+        border-radius: 0;
+        .modes-label {
+            border: 0 none;
+            clip: rect(0px, 0px, 0px, 0px);
+            float: left;
+            height: auto;
+            margin: 0 5px 0 0;
+            overflow: visible;
+            padding: 0;
+            position: static;
+            width: auto;
+            font-weight: 300;
+            font-size: 14px;
+            height: 48px;
+            line-height: 48px;
+        }
+        .modes {
+            border-right: 1px solid #e5e5e5;
+            float: left;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 20px;
+            // Mobile Landscape 
+            @media (max-width: @screen__s) {
+                display: none; 
+            }
+            &-mode {
+                border: 0;
+                width: 20px;
+                float: left;
+                height: 48px;
+                margin-right: 5px;
+                text-indent: -9999em;
+                vertical-align: middle;
+                display: inline-block;
+                
+            }
+            .mode-grid {
+                background: rgba(0, 0, 0, 0) url("../images/icon-grid-active.gif") no-repeat scroll center center;
+            }
+            .mode-list {
+              background: rgba(0, 0, 0, 0) url("../images/icon-list-active.gif") no-repeat scroll center center;
+            }
+            a.mode-grid {
+              background: rgba(0, 0, 0, 0) url("../images/icon-grid.gif") no-repeat scroll center center;
+            }
+            a.mode-list {
+                background: rgba(0, 0, 0, 0) url("../images/icon-list.gif") no-repeat scroll center center;
+            }
+        }
+    }
+
+    .toolbar-amount {
+        display: none;
+        line-height: 29px;
+        padding: 10px 20px;
+        vertical-align: middle;
+
+    }
+    .pages {
+        border-right: 1px solid #e5e5e5;
+        float: left;
+        line-height: 29px;
+        padding: 10px 20px;
+        display: none;
+    }
+
+    .sorter {
+        float: right;
+        line-height: 48px;
+        padding: 0   20px;
+        .sorter-label {
+            float: left;
+        }
+        .control {
+            float: left;
+        }
+        .sorter-options {
+            margin: 0 0 0 10px;
+            padding: 0 0 0 10px;
+            width: auto;
+            border-color: @color-gray-darken0;  
+        }
+
+        .sorter-action {
+            vertical-align: top;
+            .lib-icon-font(
+            @icon-arrow-up,
+            @_icon-font-size: 28px,
+            @_icon-font-line-height: 48px,
+            @_icon-font-color: @header-icons-color,
+            @_icon-font-color-hover: @header-icons-color-hover,
+            @_icon-font-text-hide: true,
+            @_icon-font-vertical-align: top
+            );
+            &.sort-desc {
+                &:before {
+                    content: @icon-arrow-down;
+                }
+            }
+        }
+    }
+
+    .limiter {
+        border-left: 1px solid #e5e5e5;
+        float: right;
+        line-height: 48px;
+        padding: 0 20px;
+        // Mobile Portrait 
+        @media (max-width: @screen__xs) {
+            display: none; 
+        }
+        .label {
+            float: left;
+        }
+        .control {
+            float: left;
+        }
+        &-options {
+            border-color: @color-gray-darken0;
+            margin: 0 10px;
+            width: auto;
+            padding: 0 0 0 10px;
+        }
+    }
+
+    
+
+
+
+    
+    .toolbar-bottom {   
+        .toolbar {
+            &.toolbar-products {
+                border: 0;
+                .pages { 
+                    border: 0;
+                    display: block;
+                    margin-top: 40px;
+                    padding: 0;
+                    width: 100%;
+                    .pages-item-next {
+                        float: right;
+                        i {
+                            display: none;
+                        }
+                    }
+                    .pages-item-previous {
+                        float: left;
+                        i {
+                            display: none;
+                        }
+                    }
+                    .items {
+                        width: 100%;
+                        text-align: center;
+                        .item {
+                            display: inline-block;
+                            height: 35px;
+                            line-height: 35px;
+                            width: 35px;
+                            margin: 0 5px;
+                            font-size: 14px;
+                            border: 1px solid #eee;
+                            border-radius: 0;
+                            &.pages-item-previous,
+                            &.pages-item-next {
+                                border: 0;
+                                margin: 0;
+                            }
+                            a {
+                                display: block;
+                                padding: 0;
+                                margin: 0;
+                                color: #000;
+                                font-weight: 400;
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                            }
+                            strong.page {
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+                            &.current {
+                                border-color: @theme__color; 
+                                background: @theme__color; 
+                                strong.page {
+                                    color: #fff; 
+                                    span {
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .toolbar-amount {
+                    display: none;
+                }
+                .toolbar-sorter,
+                .limiter,
+                .modes {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

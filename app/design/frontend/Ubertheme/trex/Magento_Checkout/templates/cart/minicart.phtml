@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Checkout\Block\Cart\Sidebar */
+  $om = \Magento\Framework\App\ObjectManager::getInstance();
+  $moduleManager = $om->get('Magento\Framework\Module\Manager');
+  if ($moduleManager->isOutputEnabled("Ubertheme_UbThemeHelper")):
+      $ubHelper                = $this->helper('Ubertheme\UbThemeHelper\Helper\Data');
+      $showPrice              = $ubHelper->getParam('element/actions/show_price');
+  else:
+      $showPrice              = 1;
+
+  endif;
+?>
+<div class="has-toggle minicart" id="minicart" data-block="minicart">
+  <div class="btn-toggle">
+    <a class="action showcart" href="#"
+       data-bind="scope: 'minicart_content'">
+        <span class="text"><?= /* @escapeNotVerified */ __('Bag') ?></span>
+        <span class="counter qty empty"
+              data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+            <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: getCartParam('summary_count') -->
+                <!-- ko text: getCartParam('summary_count') --><!-- /ko -->
+                <!-- ko i18n: 'items' --><!-- /ko -->
+            <!-- /ko -->
+            </span>
+        </span>
+    </a>
+  </div>
+  <div class="inner-toggle" id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+      <?php if ($block->getIsNeedToDisplaySideBar()): ?>
+          <!-- ko template: getTemplate() --><!-- /ko -->
+          <?= $block->getChildHtml('minicart.addons') ?>
+      <?php endif ?>
+  </div>
+</div>
+<script>
+    window.checkout = <?= /* @escapeNotVerified */ $block->getSerializedConfig() ?>;
+</script>
+<script type="text/x-magento-init">
+  {
+      "[data-block='minicart']": {
+          "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>
+      },
+      "*": {
+          "Magento_Ui/js/block-loader": "<?= /* @escapeNotVerified */ $block->getViewFileUrl('images/loader-1.gif') ?>"
+      }
+  }
+</script>
+
+

@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * @var $block \Magento\Theme\Block\Html\Notices
+ */
+?>
+<?php if ($block->displayNoscriptNotice()): ?>
+    <noscript>
+        <div class="message global noscript">
+            <div class="content">
+                <p>
+                    <strong><?= /* @escapeNotVerified */ __('JavaScript seems to be disabled in your browser.') ?></strong>
+                    <span><?= /* @escapeNotVerified */ __('For the best experience on our site, be sure to turn on Javascript in your browser.') ?></span>
+                </p>
+            </div>
+        </div>
+    </noscript>
+<?php endif; ?>
+<?php if ($block->displayNoLocalStorageNotice()): ?>
+    <div class="notice global site local_storage" style="display: none;">
+        <div class="content">
+            <p>
+                <strong><?= /* @escapeNotVerified */ __('Local Storage seems to be disabled in your browser.') ?></strong><br />
+                <?= /* @escapeNotVerified */ __('For the best experience on our site, be sure to turn on Local Storage in your browser.') ?>
+            </p>
+        </div>
+    </div>
+    <script>
+require(['jquery'], function(jQuery){
+
+        // <![CDATA[
+        (function($) {
+            var test = 'test';
+            try {
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+            } catch(e) {
+                $(".notice.global.site.local_storage").show();
+            }
+        })(jQuery);
+        // ]]>
+
+});
+</script>
+<?php endif; ?>
+<?php if ($block->displayDemoNotice()): ?>
+    <div class="message global demo">
+        <div class="content">
+            <p><?= /* @escapeNotVerified */ __('Three extensions <b>(UB Mega Menu, UB Content Slider, UB Quick View)</b> in this demo are for preview purpose. They are not packed with the free UB Trex theme. <br/> <a href="http://bit.ly/magento-2-extensions"><b>Go back to the Extension listing</b></a>') ?></p>
+        </div>
+    </div>
+<?php endif; ?>

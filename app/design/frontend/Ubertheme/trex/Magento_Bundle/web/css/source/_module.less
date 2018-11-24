@@ -1,0 +1,420 @@
+/*============================================================================
+
+  Table of Contents
+
+  #Magento variables
+  #Common
+
+==============================================================================*/
+
+/*============================================================================
+
+    Responsive Variable
+
+    // Mobile Portrait 
+    @media (max-width: @screen__xs) {
+      
+    }
+
+    // Mobile Landscape 
+    @media (max-width: @screen__s) {
+      
+    }
+
+    // Tablet Portrait 
+    @media (min-width: @screen__m) {
+      
+    }
+
+    // Tablet Landscape 
+    @media (min-width: @screen__l) {
+      
+    }
+
+    // Desktop 
+    @media (min-width: @screen__xl) {
+      
+    }
+
+    // Desktop Extra
+    @media (min-width: @screen__xxl) {
+      
+    }
+
+==============================================================================*/
+
+& when (@media-common = true) {
+  .bundle-actions {
+    float: left;
+    width: 100%;
+    .action.primary {
+        float: left;
+        font-weight: 500;
+        margin-top: 0;
+        height: 45px;
+        text-transform: uppercase;
+        padding: 0 20px;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -o-border-radius: 0;
+    }
+  }
+  .bundle-options-container {
+    margin-top: 20px;
+    width: 100%;
+    float: left;
+    .product-add-form {
+      background: #fff;
+      clear: both;
+      float: left;
+      width: 100%;
+      border: 1px solid #f0f0f0;
+      border-radius: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+      margin-bottom: 40px;
+      // Tablet Landscape 
+      @media (min-width: @screen__l) {
+         padding: 10px;
+      }
+
+      // Desktop 
+      @media (min-width: @screen__xl) {
+         padding: 20px;
+      }
+      &:before {
+        background: #fff url('../images/bundle-arrow.png') top left no-repeat;
+        height: 52px;
+        width: 52px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        margin-top: -26px;
+        margin-left: -26px;
+        z-index: 1;
+      }
+      &:after {
+        background: #f0f0f0;
+        height: 100%;
+        width: 1px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        content: "";
+      }
+      .bundle-customize-title {
+        position: absolute;
+        top: 0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+        left: 0;
+        font-weight: 300;
+        font-size: 22px;
+        width: 100%;
+        text-indent: 20px;
+        border-bottom: 1px solid #f0f0f0;
+        background-color: #f5f5f5;
+        box-sizing: border-box;
+        border-radius: 0;
+        z-index: 1;
+      }
+      .bundle-customize-options {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 0;
+        line-height: 40px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .action.back.customization {
+        position: absolute;
+        right: 0;
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+        top: 0px;
+        line-height: 39px;
+        padding: 0 10px;
+        z-index: 2;
+      }
+      .bundle-options-wrapper {
+        float: left;
+        width: 45%;
+        margin-top: 40px;
+        .fieldset-bundle-options {
+          .field {
+            float: left;
+            width: 100%;
+          }
+          &.fieldset > {
+
+            .field:not(.choice) > .label {
+              padding: 0 0 10px 0;
+              text-align: left;
+              width: 100%;
+              box-sizing: border-box;
+              float: left;
+            }
+            .field:not(.choice) > .control { 
+              width: 100%;
+            }
+            .field {
+              box-sizing: border-box;
+              margin: 0;
+              border-bottom: 1px solid #f0f0f0;
+              padding: 20px 0;
+              .control {
+                .field {
+                  padding: 0;
+                  border-bottom: 0;
+                  &.choice {
+                    float: left;
+                    width: 100%;
+                    .radio {
+                      float: left;
+                      margin-top: 4px;
+                    }
+                  }
+                }
+                .qty.qty-holder {
+                  margin-top: 10px;
+                  float: left;
+                  width: 100%;
+                  .label {
+                    width: auto;
+                    float: left;
+                    margin: 0 5px 0 0;
+                    line-height: 32px;
+                    padding: 0;
+                  }
+                  .control {
+                    float: left;
+                    width: 40px;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }     
+      .block-bundle-summary { 
+        float: right;
+        width: 45%;
+        margin-top: 40px;
+        .title {
+          border-bottom: 1px solid #f0f0f0;
+          padding: 0;
+          line-height: 40px;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+        .bundle-info {
+          padding: 22px 0;
+          .product-addto-links {
+            display: none;
+          }
+          .product-image-container {
+            float: left;
+            margin-right: 20px;
+          }
+          .product-details {
+            float: left;
+          }
+          .price-box {
+            .price-container .price {
+              color: @theme__color;
+              font-size: 16px;
+            }
+          }
+          .box-tocart {
+            .field.qty {
+              float: left;
+              max-width: 100px;
+              margin-bottom: 0;
+              .label {
+                margin-right: 5px;
+                line-height: 38px;
+                padding: 0;
+              }
+              .control {
+                max-width: 40px;
+                margin-left: 5px;
+                input {
+                  min-height: 38px;
+                  border: 1px solid #f0f0f0;
+                  border-radius: 0;
+                }
+              }
+            }
+            .actions {
+              float: left;
+              margin-top: 10px;
+              button {
+                border-radius: 0;
+              }
+            }
+          }
+        }
+        .bundle-summary {
+          float: left;
+          width: 100%;
+          margin-top: 20px;
+          .subtitle {
+            float: left;
+            padding-bottom: 10px;
+            width: 100%;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+          li {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {  
+  .product-info-main {
+    .bundle-options-container {
+      .product-add-form {
+        .action.back.customization {
+          top: -60px;
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
+  .bundle-actions {
+    float: left;
+    width: auto;
+    .action.primary {
+      min-height: 45px;
+    }
+  }
+  .bundle-options-container {
+    .product-add-form {
+      margin-bottom: 0;
+      padding: 10px;
+      .bundle-customize-title {
+        height: auto;
+        padding: 0 35px 0 10px;
+        line-height: 30px;
+        text-indent: 0;
+        position: static
+      }
+      .action.back.customization {
+        position: absolute;
+        font-size: 0;
+        width: 40px;
+        background: none;
+        height: auto;
+        top: -30px;
+        padding: 0;
+        line-height: 30px;
+        right: -10px;
+        max-height: 30px;
+        font-weight: 300;
+        &:before {
+          content: "\f00d";
+          width: 40px;
+          height: 100%;
+          font-family: "FontAwesome";
+          position: absolute;
+          right: 0;
+          top: 0;
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+      .bundle-options-wrapper {
+        width: 100%;
+        margin: 0;
+        .product-options-wrapper {
+          position: relative;
+          padding-bottom: 60px;
+          &:before {
+            background: #fff url('../images/bundle-arrow.png') top left no-repeat;
+            height: 52px;
+            width: 52px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            content: "";
+            margin-left: -26px;
+            z-index: 1;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+          }
+          &:after {
+            background: #f0f0f0;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom: 26px;
+            left: 0;
+            content: "";
+          }
+        }
+        fieldset {
+          margin-bottom: 0;
+          padding: 10px 0;
+          position: relative;
+        }
+      }
+      .block-bundle-summary {
+        margin-top: 0;
+        width: 100%;
+        .stock.available {
+          float: left;
+          margin: 10px 0;
+          width: 100%;
+        }
+        .bundle-info .box-tocart {
+          .field.qty {
+            max-width: 70px;
+            min-width: 70px;
+            margin-bottom: 0;
+            padding-right: 0;
+            .label {
+              max-width: 60px !important;
+              margin: 0 !important;
+              min-width: 30px !important;
+              padding: 0 !important;
+              width: 30px !important;
+            }
+          }
+          .action.tocart {
+            padding: 8px 20px;
+          }
+        }
+
+      }
+      &:before {
+        display: none;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+    
+}
