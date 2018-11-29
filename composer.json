@@ -2,12 +2,12 @@
     "name": "ubertheme/theme-frontend-trex",
     "description": "UB Trex theme for Magento 2",
     "release_date": "10/12/2018",
+    "release_version": "v1.0.0-beta",
     "require": {
         "php": "~7.0.13|~7.1.0",
         "magento/framework": "101.0.*"
     },
     "type": "magento2-theme",
-    "version": "v1.0.0-beta",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
